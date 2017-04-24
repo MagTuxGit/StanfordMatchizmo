@@ -21,7 +21,7 @@
 @synthesize suit = _suit;		// because we provide getter and setter
 
 + (NSArray *) validSuits {		// "+" means static method
-    return @[@"",@"",@"",@""];
+    return @[@"♠︎",@"♣︎",@"♥︎",@"♦︎"];
 }
 - (void) setSuit:(NSString *) suit {
     if ([[PlayingCard validSuits] containsObject:suit]) {

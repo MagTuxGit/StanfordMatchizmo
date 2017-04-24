@@ -31,14 +31,15 @@
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
-    if ([sender.currentTitle length]) {
+    if ([sender.currentTitle length] || [self.cardDeck isEmpty]) {
         UIImage *cardImage = [UIImage imageNamed:@"cardback"];
         [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
         [sender setTitle:@"" forState:UIControlStateNormal];
     } else {
         UIImage *cardImage = [UIImage imageNamed:@"cardfront"];
         [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
-        [sender setTitle:@"A♣︎" forState:UIControlStateNormal];
+        //[sender setTitle:@"A♣︎" forState:UIControlStateNormal];
+        [sender setTitle:[self.cardDeck drawRandomCard].contents forState:UIControlStateNormal];
     }
     self.flipCount++;
 }
