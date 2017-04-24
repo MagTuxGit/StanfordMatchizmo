@@ -1,24 +1,33 @@
 //
-//  ViewController.m
+//  CardGameViewController.m
 //  Matchizmo
 //
 //  Created by Andrij Trubchanin on 4/24/17.
 //  Copyright © 2017 Andrij Trubchanin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CardGameViewController.h"
+#import "Deck.h"
+#import "PlayingCardDeck.h"
 
-@interface ViewController ()
+@interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
+
+@property (strong, nonatomic) Deck *cardDeck;
 @end
 
-@implementation ViewController
+@implementation CardGameViewController
+
+- (Deck *)cardDeck {
+    if (!_cardDeck) _cardDeck = [[PlayingCardDeck alloc] init];
+    return _cardDeck;
+}
 
 - (void)setFlipCount:(int)flipCount {
     _flipCount = flipCount;
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
-    NSLog(@"flipCount = %d", self.flipCount);
+    //NSLog(@"flipCount = %d", self.flipCount);
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {

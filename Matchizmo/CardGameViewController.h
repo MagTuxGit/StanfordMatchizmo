@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CardGameViewController.h
 //  Matchizmo
 //
 //  Created by Andrij Trubchanin on 4/24/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface CardGameViewController : UIViewController
 @end
 
