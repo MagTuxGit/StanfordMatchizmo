@@ -9,5 +9,13 @@
 #import "Card.h"
 
 @implementation Card
-
+- (int)match:(Card *)card {
+    int score = 0;
+    
+    if ([self.contents isEqualToString:card.contents]) {
+        score = 1;
+    }
+    
+    return score;
+}
 @end
