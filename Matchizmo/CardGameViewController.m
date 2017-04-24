@@ -31,18 +31,20 @@
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
-    // i think it's better to add isEmpty method to Deck than check card for nil
-    if ([sender.currentTitle length] || [self.cardDeck isEmpty]) {
+    if ([sender.currentTitle length]) {
         UIImage *cardImage = [UIImage imageNamed:@"cardback"];
         [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
         [sender setTitle:@"" forState:UIControlStateNormal];
     } else {
-        UIImage *cardImage = [UIImage imageNamed:@"cardfront"];
-        [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
-        //[sender setTitle:@"A♣︎" forState:UIControlStateNormal];
-        [sender setTitle:[self.cardDeck drawRandomCard].contents forState:UIControlStateNormal];
+        Card *nextCard = [self.cardDeck drawRandomCard];
+        // ok, maybe this is a better solution
+        if (nextCard) {
+            UIImage *cardImage = [UIImage imageNamed:@"cardfront"];
+            [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
+            [sender setTitle:nextCard.contents forState:UIControlStateNormal];
+            self.flipCount++;
+        }
     }
-    self.flipCount++;
 }
 
 @end
