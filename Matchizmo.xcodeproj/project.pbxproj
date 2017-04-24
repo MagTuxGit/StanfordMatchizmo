@@ -13,6 +13,7 @@
 		87A7FB4F1EAE085E00D50A9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A7FB4D1EAE085E00D50A9E /* Main.storyboard */; };
 		87A7FB511EAE085E00D50A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A7FB501EAE085E00D50A9E /* Assets.xcassets */; };
 		87A7FB541EAE085E00D50A9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A7FB521EAE085E00D50A9E /* LaunchScreen.storyboard */; };
+		87A7FB5D1EAE170B00D50A9E /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A7FB5C1EAE170B00D50A9E /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		87A7FB501EAE085E00D50A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87A7FB531EAE085E00D50A9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87A7FB551EAE085E00D50A9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87A7FB5B1EAE170B00D50A9E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Model/Card.h; sourceTree = "<group>"; };
+		87A7FB5C1EAE170B00D50A9E /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Model/Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +61,11 @@
 		87A7FB431EAE085E00D50A9E /* Matchizmo */ = {
 			isa = PBXGroup;
 			children = (
-				87A7FB471EAE085E00D50A9E /* AppDelegate.h */,
-				87A7FB481EAE085E00D50A9E /* AppDelegate.m */,
+				87A7FB4D1EAE085E00D50A9E /* Main.storyboard */,
+				87A7FB5E1EAE171F00D50A9E /* Model */,
 				87A7FB4A1EAE085E00D50A9E /* ViewController.h */,
 				87A7FB4B1EAE085E00D50A9E /* ViewController.m */,
-				87A7FB4D1EAE085E00D50A9E /* Main.storyboard */,
 				87A7FB501EAE085E00D50A9E /* Assets.xcassets */,
-				87A7FB521EAE085E00D50A9E /* LaunchScreen.storyboard */,
-				87A7FB551EAE085E00D50A9E /* Info.plist */,
 				87A7FB441EAE085E00D50A9E /* Supporting Files */,
 			);
 			path = Matchizmo;
@@ -74,9 +74,22 @@
 		87A7FB441EAE085E00D50A9E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				87A7FB471EAE085E00D50A9E /* AppDelegate.h */,
+				87A7FB481EAE085E00D50A9E /* AppDelegate.m */,
+				87A7FB521EAE085E00D50A9E /* LaunchScreen.storyboard */,
+				87A7FB551EAE085E00D50A9E /* Info.plist */,
 				87A7FB451EAE085E00D50A9E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87A7FB5E1EAE171F00D50A9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87A7FB5B1EAE170B00D50A9E /* Card.h */,
+				87A7FB5C1EAE170B00D50A9E /* Card.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +167,7 @@
 				87A7FB4C1EAE085E00D50A9E /* ViewController.m in Sources */,
 				87A7FB491EAE085E00D50A9E /* AppDelegate.m in Sources */,
 				87A7FB461EAE085E00D50A9E /* main.m in Sources */,
+				87A7FB5D1EAE170B00D50A9E /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
