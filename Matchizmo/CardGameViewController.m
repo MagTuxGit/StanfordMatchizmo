@@ -31,6 +31,7 @@
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
+    // i think it's better to add isEmpty method to Deck than check card for nil
     if ([sender.currentTitle length] || [self.cardDeck isEmpty]) {
         UIImage *cardImage = [UIImage imageNamed:@"cardback"];
         [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
