@@ -17,10 +17,18 @@
 @end
 
 @implementation CardGameViewController
+- (IBAction)reset:(UIButton *)sender {
+    self.game = [self newGame];
+    [self updateUI];
+}
 
 - (CardMatchingGame *)game {
-    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    if (!_game) _game = [self newGame];
     return _game;
+}
+
+- (CardMatchingGame *)newGame {
+    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
 }
 
 - (Deck *)createDeck {
@@ -28,20 +36,20 @@
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
-    int cardIndex = [self.cardButtons indexOfObject:sender];
+    NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex];
     [self updateUI];
 }
 
 - (void)updateUI {
     for (UIButton *cardButton in self.cardButtons) {
-        int cardIndex = [self.cardButtons indexOfObject:cardButton];
+        NSUInteger cardIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardIndex];
         [cardButton setTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
     }
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int)self.game.score];
 }
 
 - (NSString *)titleForCard:(Card *)card {
